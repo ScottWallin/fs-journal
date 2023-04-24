@@ -3,7 +3,7 @@
     > | To store our projects and go over the code we use. To allow others to see our projects we've done and review our code we used. Also to publish the pages we make so our websites can be out in the world. |
 
 02. In the terminal, what is the command `mkdir` used for?
-    > | ANSWER HERE |
+    > | mkdir = Make Directory = makes a new directory (folder) for storing projects and other goodies 📂 |
 
 03. What is a ***pseudo-class*** and what are some of the most common ones you think you will use?
     > | ANSWER HERE |
