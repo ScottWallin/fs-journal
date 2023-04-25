@@ -6,7 +6,7 @@
     > | mkdir = Make Directory = makes a new directory (folder) for storing projects and other goodies 📂 |
 
 03. What is a ***pseudo-class*** and what are some of the most common ones you think you will use?
-    > | ANSWER HERE |
+    > |  |
 
 04. What is ***specificity*** and how might you use it to your benefit?
     > | ANSWER HERE |
