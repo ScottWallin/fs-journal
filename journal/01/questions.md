@@ -1,6 +1,6 @@
 # Foundations of Web Development
 01. In your own words, why do we use Git?
-    > | To store our projects and go over the code we use. To allow others to see our projects we've done and review our code we used. Also to publish the pages we make so our websites can be out in the world. |
+    > | To store our projects and track the changes we've made to our code as we build it. If we're working with others, it'll help to see who did what and timestamp the projects as they go. |
 
 02. In the terminal, what is the command `mkdir` used for?
     > | mkdir = Make Directory = makes a new directory (folder) for storing projects and other goodies 📂 |
