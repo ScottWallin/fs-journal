@@ -86,3 +86,14 @@ switch(clueKey){
     
   }
 }
+
+target an index of a string the same way as an array: return str[position]
+join 2 strings: 
+return `${str1}${sepeaator}${str2}
+return str1 + separator + str2 
+
+returns a string, capitalizes the character at target position, works with any length of string
+return str[position].toUpperCase()
+
+"reference error" most likely means you need a string
+
