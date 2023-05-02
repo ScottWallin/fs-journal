@@ -51,3 +51,38 @@ if(!x) == ! means "not". if (!hasHealthPotion) = there is no health potion.
 
 Math.floor = round down
 Math.ceil = round up
+
+
+
+<!-- SECTION TUESDAY MAY 2 -->
+LOOPS // ARRAYS // DYNAMICALLY UPDATING DOM
+
+<!-- NOTE            V PARAMETER -->
+function accuseAnimal(placeholder){
+  console.log(placeholder)
+}
+
+to make sure the function is active
+functions can be defined to take in parameters. In a function definition, you can specify a name. 
+function this(x) x=argument.
+Placeholder best practice: describe it as it is. 
+
+parameter = definition when defining the function
+argument = the actual data sent in. 
+"null" can be anything you need it to be.
+
+* handle - go do this. Hands job off to another function. 
+* options - picks from the list of items in the array
+* keys = options
+* switch = switches between id's
+* case = denotes the id
+
+
+switch(clueKey){
+  case 'weapon:
+  if(xx){
+    }
+  case 'home':{
+    
+  }
+}
