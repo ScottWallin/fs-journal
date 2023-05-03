@@ -97,3 +97,10 @@ return str[position].toUpperCase()
 
 "reference error" most likely means you need a string
 
+<!-- SECTION Wednesday, May 3rd -->
+Pseudo coding: writing out what you want to do in longhand: find the sandwich, add the price, etc.
+functions = bruce lee: fear the function that does one thing super well, not the function that does a hundred things okay.
+
+very first line in a function should always be console.log() that way you can test it easily.
+onclick should always be in a button for accessibility requirements.
+
