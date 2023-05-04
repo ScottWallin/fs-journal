@@ -152,3 +152,13 @@ Parameters / Arguments are still a little confusing.
 Invoking strings
 Ternaries. Still confused about those too for the most part. I get that you're essentially asking a question then answering it, but that's as far as i know
 
+<!-- SECTION tutor -->
+FUNCTIONS & ARRAYS
+Draw = need an id="" to draw from the array.
+function draw^name of array^ usually is best. 
+function drawAnimals()
+template - stores all HTML that we want to apply for that function. usually only seen in draw functions.
+animals.forEach(a => template += ` insert the html for string interpolation here`)
+
+argument goes into the DRAW function.
+Parameters go into the function name.
