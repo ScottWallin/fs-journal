@@ -104,3 +104,51 @@ functions = bruce lee: fear the function that does one thing super well, not the
 very first line in a function should always be console.log() that way you can test it easily.
 onclick should always be in a button for accessibility requirements.
 
+
+<!-- SECTION Thursday, May 4th -->
+* | is shift + \ (Pipes or Sticks (sticks is cooler))
+* || = "or" in functions
+* "offset" is essentially a col-6. Fills the empty space instead of putting in an extra empty column.
+* add a cursor in css to better show the object is clickable
+    in style.css: user-select: none;
+* user-select removes the highlight when you click the object.
+<!-- Intervals -->
+setInterval() 
+Intervals work in MS. 
+don't invoke "()" intervals.
+InnerHTML is used when you want to adjust things and there are more elements than text being used. Also uses the `` to make work (inter-something). The tilde, under the 'esc' button.
+InnerText is used when it's only text being changed. 
+
+animals.forEach(animal => {
+  switch(animal.mood) {
+    case "x":
+    break;
+    case "y":
+    break;
+    default:   (default is what is done if x or y etc. aren't met.)
+  }
+})
+ 
+ is equivalent to
+ animals.forEach(animal => {
+  if(animal.mood == "x") {
+  } if else {
+    animal.mood == "y"
+  }
+ })
+
+marquee behavior ="alternate" direction="up, left, etc." scrollamount=
+marquee: HTML class to add animation of scrolling.
+marquee can have multiple lines of behavior and directions.
+Wrap the elements you want to move in the marquee tags. 
+marquee.stop causes the marquee to stop moving.
+
+
+
+
+
+<!-- SECTION for tutor request -->
+Parameters / Arguments are still a little confusing.
+Invoking strings
+Ternaries. Still confused about those too for the most part. I get that you're essentially asking a question then answering it, but that's as far as i know
+
