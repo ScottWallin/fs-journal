@@ -162,3 +162,5 @@ animals.forEach(a => template += ` insert the html for string interpolation here
 
 argument goes into the DRAW function.
 Parameters go into the function name.
+
+<!-- SECTION FIRESIDE -->
