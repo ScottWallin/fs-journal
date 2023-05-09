@@ -85,3 +85,4 @@ it's a good practice to start with export as the first thing. If we want to refe
  Services can be called inside of other services.
 
 <!-- SECTION FIRESIDE W/ JORDAN -->
+For imports, make sure import you're linking, does have a link attached to the intelisense.
