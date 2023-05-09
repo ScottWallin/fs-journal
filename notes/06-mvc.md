@@ -83,3 +83,5 @@ it's a good practice to start with export as the first thing. If we want to refe
 
  * cmd + . declares the method to the next layer.
  Services can be called inside of other services.
+
+<!-- SECTION FIRESIDE W/ JORDAN -->
