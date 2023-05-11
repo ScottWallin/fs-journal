@@ -86,3 +86,33 @@ it's a good practice to start with export as the first thing. If we want to refe
 
 <!-- SECTION FIRESIDE W/ JORDAN -->
 For imports, make sure import you're linking, does have a link attached to the intelisense.
+
+
+<!-- SECTION Wednesday May 10 -->
+Modals data-bs-toggle: what kind of component do i open?
+data-bs-target: open this modal.
+They work as an onClick()
+Modal-content: the content of the modal. Inside of this is what's actually displayed in the modal.
+Modal-header is the title of the modal. The title you want it to show.
+Modal-body is similar to the body of the html. can have divs rows and columns.
+in the modal-dialog is where you'd also add the size of the modal.
+for= and id= on forms should match
+preventDefault keeps the page from refreshing.
+static vs get - static doesn't get/set every time you instantiate. it's just static to the class. Static exists on the class so when you call it you don't need to do app.x.x 
+Get is a pproperty that's created every time you click new 'x'
+name= tags it into the value to 
+
+how to know when to use get vs static.
+get use: unique template for each one i use. String interpolation is a good notifier of when to use get. if the info doesn't need to change. the form doesn't need to change, but the information does. the unique instance or property changes with each use. 
+static use: if the information doesn't have to change. 
+
+local storage: saveState('id', appState.x)
+if (input) return = requires there to be an input for the thing to log. without that input, it won't work.
+
+car.js line 116 is what is used to make it so the button is disabled if there is no user name given. also carscontroller line 35 &
+
+car line 110 for delete button
+
+index, model, dummy data in AppState, build the controller, register controller in the App, build service page, after pages are set up, console.log like crazy, draw, win.
+<!-- SECTION MAY 11 NOTES -->
+KEEP TRACK OF ORDER OF STEPS IN NOTES.
