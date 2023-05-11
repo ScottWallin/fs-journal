@@ -113,6 +113,60 @@ car.js line 116 is what is used to make it so the button is disabled if there is
 
 car line 110 for delete button
 
-index, model, dummy data in AppState, build the controller, register controller in the App, build service page, after pages are set up, console.log like crazy, draw, win.
+<!-- index, model, dummy data in AppState, build the controller, register controller in the App, build service page, after pages are set up, console.log like crazy, draw, win. -->
+
 <!-- SECTION MAY 11 NOTES -->
 KEEP TRACK OF ORDER OF STEPS IN NOTES.
+* 1 bcw create then index. build your layers specific to each element you'll need.
+* 2 Starts with creating the model
+
+export class x, constructor(data), this.id = data.id || generatedId() good place to start. then go with your this.x for whatever descriptors you'll need for the project. 
+
+* 3 dummy data in AppState. under class appstate extends eventemitter {xxxxxx} content goes between spikies. 
+* 4 build your controller. register the controller in App.js (xController = new CasesController())
+* 5 build your services.
+
+class xServices{}
+export const x Service = new xService()
+
+* 6 index.html. space things out. comment out the stuff in main. main/container-fluid. row. col's to build out the layout. Section things out. build out your template with the <p> and <h> tags. comment it out and copy it to make the template. 
+* 7 get xTemplate() {
+  return ` *tilde next to 1* paste in template copied over. replace things between p and h tags with ${this.x}
+}
+* 8 jump into controller to draw. function _drawX(){} console.log to make sure it's drawing to the page. repeat _draw in the constructor(). let x = appState.x / let template = ''
+x.forEach(x => template += x.template). setHTML('x', template). || don't forget to put the id in the html file where you want the template to go.||.
+
+* in the model tag - for newDate() - get ComputeDate(){ let date = this.date | return (date.getMonth())+'/' + (date.getDate() + '/' + (date.getFullYear))}
+* to limit what's seen in a preview: get ComputeTitle() {return (this.x.slice(0,15) + '...')} in the slice it specifies what is seen. based off character. not word.
+* to make active, add the "onclick" in th div in the template. onclick='app.xController.setActive()' don't forget the app.xController!!
+add the setActive(){console.log()} in the controller under the constructor. in the parenthesis of the setActive add setActive(')
+x.Service.setActive(xId).
+* copy import in AppState. then activeX = null. in the Import do x|null as well.
+
+* hard code the template in HTML for the activeX. example is on line 44 in the index.html of today's lesson. with text areas, width must be specified in the class. copy template over to the model.
+* make activeXTemplate(){ fill in template where things are needed to be changed.}
+
+* function _drawActiveX(){ let activeX = appState.activeX | setHTML('', activeX.ActiveXTemplate)}
+* under the constructor add the appState.on_drawActiveX.
+* in the AppState, classifiedWords =[] does an array of redacted words that you don't want shown. changed in the model.
+* add get ComputeRedactedX(){let originalXArray = this.x.split(' ')}
+<!-- information for above on line 53 in the case.js for today's lecture. -->
+<!-- split looks for the spaces and removes them to push the word out. -->
+* let redactedXArray = originalXArray.map(word => {
+  <!-- for capitalized -->
+if(appState.classifiedWords.includes(word.toLowerCase())){
+  return ' black squares ' } else{ return word }
+  return redactedXArray.join(' ') 
+  <!-- join returns the array together. -->
+}})
+* .map covers the matching logic with what was specified. map transforms array to new array.
+* to remove redacted. copy the template because we'll be switching between two templates. redacted template / unredacted template.
+* for the redacted one: get redactedXBody. for the unredacted: get .xBody.
+
+* Always make sure to register your new controllers in the app.js 
+
+* Name and property must align for the input to take.
+
+<!-- STUB UX / UI THINGS -->
+* document.querySelector(.'reportBody').focus() ----- automatically drops the cursor into the report body
+* in the model, onblur (in the textarea) automatically saves the text if i click outside of the text area.
