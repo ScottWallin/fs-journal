@@ -123,7 +123,7 @@ KEEP TRACK OF ORDER OF STEPS IN NOTES.
 export class x, constructor(data), this.id = data.id || generatedId() good place to start. then go with your this.x for whatever descriptors you'll need for the project. 
 
 * 3 dummy data in AppState. under class appstate extends eventemitter {xxxxxx} content goes between spikies. 
-* 4 build your controller. register the controller in App.js (xController = new CasesController())
+* 4 build your controller. register the controller in App.js (xController = new XController())
 * 5 build your services.
 
 class xServices{}
