@@ -170,3 +170,31 @@ if(appState.classifiedWords.includes(word.toLowerCase())){
 <!-- STUB UX / UI THINGS -->
 * document.querySelector(.'reportBody').focus() ----- automatically drops the cursor into the report body
 * in the model, onblur (in the textarea) automatically saves the text if i click outside of the text area.
+
+<!-- SECTION Monday, May 15 -->
+* try catch to see about an error. put the function in the error. put Pop.error and it'll tell you what's wrong.
+* promise isn't data. promise is the await.
+* .map(x => '') takes the individual item and converts it to a new array. processes each item in the array to a new one.
+* when working with styling, comment out the getter. some api's limit how many times you can get the information in a time limit and refreshing pulls that count down. 
+
+1. bcw create - mvc
+2. get rid of template stuff with the valuesController
+3. created character.js in the model
+4. export class Character - constructor(data) { this.id, name, alive, image, wizard}
+5. get CardTemplate() return /*html*/` <div>${this.name}</div>` to make sure it works
+6. made CharactersController.js to export the charactersController. constructor(){console.log()}
+7. register charactersController in the app.js
+8. in the appState made characters =[] then appState.on('character', _drawCharacters)
+9. above the export class function _drawCharacter(){}
+10. added charactersService.js - class charactersService {} export const chacatersservice = portion of the service
+11. go to characters controller and import the service
+12. on the controller, added goGetMyCharacters .... (){ charactersService.goGet ....}
+13. made that funciton async. means: will do the thing but not sure how long it'll take. needs an event listener. add "await" before the function inside the async. go into the service and add async to the service function as well.
+<!-- STUB this was the setup and now for the API -->
+14. in the index. add script - axios in the body  but under the header. Axios gives access to the library axios. gives back a promise. in the inspect, go to network and check Fetch. shows everything that can be obtained. 
+15. axiosService. added the baseurl which was up to .com/
+16. linked the hpApi.get('/api/characters')(this was the rest of the url) under the async. adding the last bit of the url here allows us to go into the base url then go into the next part to retrieve whatever specific item we wanted to get. 
+17. const response = wait for the result of the thing. this was put before the async
+18. res.data gives the array of the amount of data.
+19. appState.charcters = response.data.map(c => new.character()) gave the information from the draw. but all it gave was pojos. simple information.
+20. did the for each on the characters controller under the _drawCharacters()
