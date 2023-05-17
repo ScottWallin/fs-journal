@@ -198,3 +198,58 @@ if(appState.classifiedWords.includes(word.toLowerCase())){
 18. res.data gives the array of the amount of data.
 19. appState.charcters = response.data.map(c => new.character()) gave the information from the draw. but all it gave was pojos. simple information.
 20. did the for each on the characters controller under the _drawCharacters()
+
+<!-- SECTION Tuesday,  May 16 -->
+* sandbox.codeworksacademy.com - it's an API for us to mess around with.
+* the keys under the header are the same keys we'll be using in the lab.
+* env = environment. this is what loads the environment for the application.
+* .handleRouteChange() listens for the #changes and acts accordingly with changing the path.
+* api = application programmable interface
+<!-- 1. bcw create -->
+<!-- 2. mvc auth. name your project. n on init. open. -->
+<!-- 3. start with bcw live. -->
+<!-- 4. grab the keys from the site and paste them into the env. take them and post them accordingly to the clientId, audience, & domain. -->
+<!-- 5. swap the baseURL to the sandbox.codeworksacademy.com. then save. -->
+<!-- 6. click login. -->
+<!-- 7. add <a> in the index for an href with the link you want to setup. -->
+<!-- 8. build new controller for the href you want sent -->
+<!-- 9. export then constructor then console.log to make sure it's connected. -->
+<!-- 10. go to router to add the path.  -->
+11. build a service for the tab you're wanting. class xService. out of the {} make your export constxservce = new XService.
+12. make sure to put async before the function the await is going into. in the async 
+13. write an async function in the controller that's named the same as the service. try catch pop error to make sure the function works. don't forget the await within the async.
+14. model > new file > xxxxx.js > export class xxx > constructor(data) this.x = data.x
+15. get xCard(){ > return /*html*/ then basic layout of the card we want. } > layout for this card is on the car model for today's lesson.
+16. pass into the appstate. still on the model portion for reference.
+17. add the @type import wherever this was supposed to go.
+<!-- you can make sure the html from the other pages doesn't show up on the page you want to by refreshing. horrible way to set up though. -->
+18. for loading to the page, function _drawX on the controller. let template = '' > appState.cars.4each c template > set HTML('x', template)
+19. in the constructor, for the export class, add the AppState.on('x',_drawX). 
+<!-- STUB adding functionality to only show create things if you're logged in -->
+20. in the model, return /*html*/ then static xForm {add form here} !!!!!!don't worry about adding the creator. that's done on back end!!!!
+21. head to index. grab bootstrap modal and put it in under the main. give the modal the id.
+22. update the modal each time the page loads. in in the export controller, setHTML('modal name;, X.XForm). double check all imports are set.
+<!-- STUB modal info -->
+23. data-bs-toggle="name" data-bs-target="#name" to open the modal on the page. link it in the <button>. Toggle tells BS what it's going to toggle. Talks about what kind of BS data it'll be messing with. Target tells it what it'll target. The ID or name of what it'll be calling to. toggle and target aren't always the same. 
+<!-- end modal info -->
+24. make the button for the modal not show up unless they're logged in.make a <div> in html but make the class a custom one to reference where it'll go. go to the xController then in the constructor, setHTML('name we chose for the button').
+25. go to the other controllers and copy over the set html to the constructor, but remove the information about the modal but leave the id. that way it'll grab the element, but it'll be empty so no butotn for it to grab unless you're on the page you want to be on. 
+26. appState.on('account', _drawButton) in the controller to listen for when we're logged in.
+27. funciton _drawButton(), if (appState.account) {then copy over the setHTML with the modal in it.} 
+28. in controller, async createX() try/catch > pop.error(error). > window.event.preventDefault() in the try portion of the function.
+29. const form = widnow.event.target under the preventDefault. > const formData = getFormData() this passes in the form. console.log to make sure it works.
+30. await xService.createX(formData) > form.reset()
+31. async createX(){ const res = await api.post('api/x;, formData)} this pushes the information to the api and posts the information to the page. > console.log('xxxxxx', res.data)
+<!-- STUB DO THIS IN THE CONTROLLER LAYER -->
+31.5 boostrap.Modal.getOrCreateInstance('# whatever your modal's id is').hide() 
+<!-- END STUB -->
+32. in the service of the async createX, add const newX = new X(res.data) > AppState.x.push(newX) > AppState.emit('x')
+<!-- STUB DELETE BUTTON AND REQUEST -->
+33. go to the xCard, make your delete button on the card wherever fits best. add onclick="app.xController.deleteX('${this.id}')"
+34. go to xController, under the create add async deleteX(id), add the try/catch/pop.error. add const yes = await pop.confirm(), if (!yes){return}
+35. xService = deleteCar. 
+36. in service, async deleteX(id), const res = await api.delete('api/x/'+id)
+37. appstate.cars = appstate.cars filter 
+38. in the model, do get deleteButtonIfCarIsYours(){ if (this.creatorId == appstate.account.id) {return delete button from earlier) }return``}. example on bottom of car.js from today's example.
+39. go to controller, in the xController, appstate.on('account', drawX)
+<!-- ? is the elvis operator. allows us to safely access the account if it's null. if tehre's nothing there, it stops. if there's something then it'll investigate.  -->
