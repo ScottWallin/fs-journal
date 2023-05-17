@@ -308,4 +308,4 @@ if(appState.classifiedWords.includes(word.toLowerCase())){
 40. userspellscontroller - async toggleprepared(id) - try catch pop - await usersspellsservice.togglespell(id)
 41. userspellsservice - const spell = appstate.userspells.find(s => s.id == id)
 42. userspellsservice - toggle spell spell.prepared = !spell.prepared  // cosnt res = await sandboxApi.put('api/spells/' + id, spell) // console.log('', res.data)
-43. 
+43.
