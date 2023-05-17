@@ -253,3 +253,59 @@ if(appState.classifiedWords.includes(word.toLowerCase())){
 38. in the model, do get deleteButtonIfCarIsYours(){ if (this.creatorId == appstate.account.id) {return delete button from earlier) }return``}. example on bottom of car.js from today's example.
 39. go to controller, in the xController, appstate.on('account', drawX)
 <!-- ? is the elvis operator. allows us to safely access the account if it's null. if tehre's nothing there, it stops. if there's something then it'll investigate.  -->
+
+
+
+<!-- SECTION WEDNESDAY, MAY 17 -->
+* Puts are the focus today - essentially an update
+* Spellbook example will be super useful this weekend
+* building the controller first allows you to start testing things off the bat
+* nice design thing to have listeners on top
+* reference the network tab in the inspect to see the URL and see if we missed something. 
+* inputs get an onchange. onclicks register on the click, but inputs can wig out when they get clicked. we want to tie into the change state of it, not the click.
+
+1. in axios, click on api, F2, change 'API' to sandboxApi.
+2. copied down the sandboxApi and changed to dndApi. Also added the interceptors.request for the dndApi.
+3. build first controller - spellsController. Starting with the most familiar. export class SpellsController
+4. constructor then console.log
+5. got rid of the extra things in the router. replaced the only path with the SpellsController since that's the main thing we need anyway.
+6. class SpellsService { export const spells  new spells }
+7. async getSpells() const res = await dndApi.get('/api/x') > console.log (res.data.results) .results is where the data is actually located. go deeper.
+8. async getSpellsFromDndApi(){ try, catch, pop. error. await SpellsService.getSpells()} 
+9. in appState.js - spellDex = []
+10. spellsservice appstate.spellDex = res.data.results
+11. scontroller setup listener. appstate.on('spelldex', draw spelldex)
+12. scontroller function _draw sdex() {console..log('sdex', res.data.results)}
+13. scontroller let template = '', appstate.sdex.forEach (s => template += /*html*/` make the template in the string interpolation`)
+14. added to the interpolation
+15. async setActiveSpell area
+16. build it out in the HTML for it to draw to the page. the spelldex id area on the lecture from today.
+16. setHTML('spellDex', template) in scontroller.
+17. build model. activespell.js
+18. export class / constructor then build out the model. to convert from array, data.desc?.join('<br/>') in this example since the spells come in as an array but we need it as a string.
+<!-- <br/> is a line break.  -->
+19. after building the constructor, add the get ActiveSpellCard return /*html*/ and build the html under it.
+20. in spellsservice  appstate.activespell = new acivespell(res.dat)
+21. in appstate, activeSpell = null and chagne the import
+22. add activespell to the listener
+23. in the controller, function _drawActiveSpell(){ setHTML ('activeSpell, appstate.activespell?.activespellcardtemplate)}
+24. add the button to make sure it doesn't work unless someone's logged in. make the button in the model. in the button, if appstate.account return /*html*/ login button } return /*html*/`insert butotn here`
+25. call ${this.spellbookbutton}
+26. new controller. userspellscontroller. export class blah blah blah. constructor console.log to make sure it's hoooked up. async addspell try catch pop
+27. add this to the app.js
+28. create userspellsservice - class userpsellsservice / export const
+29. userspellscontroller - await userspellservice.addspell()
+30. userspellsservice addspell() const res = sandboxApi.post('api/spells', appstate.activespell) then console.log
+31. userspllscontroller async getuserspells - try catch pop - await userspellservice.getuserspells - const res = await sandbox.get('api/spells'). console.log('', res.data)322 
+32. in the userspellsonctroller - constructor - appstate.on ('account' this.getuserspells)
+33. userspellsservice - getuserspells - appstate.userspells = res.data.map(s. => new Spell(s))
+34. appstate - userspells = {} and change the import
+35. userspellscontroller - _drawuserspells in the appstate.on under the constructor. function _drawuserspells - console.log('drawing spells',appstate.userspells)
+36. in the spell model, get UserSpellTemplate, return /*html*/ then build out the template. example is on line 44 in the spell model from today. 
+37. userspellscontroller in the drawuserspells, console.log('', appstate.userspells), let template = '', appstate.userspells.forEach(s => template += s.userspelltemplate) sethtml
+38. go back tot the userspelltemplate and add a checkbox. add 'checked' to the template.
+39. get preparedCheckbox() to see one way. add onchange ="app.userspellscontroller.togglepprepared('${this.id})"
+40. userspellscontroller - async toggleprepared(id) - try catch pop - await usersspellsservice.togglespell(id)
+41. userspellsservice - const spell = appstate.userspells.find(s => s.id == id)
+42. userspellsservice - toggle spell spell.prepared = !spell.prepared  // cosnt res = await sandboxApi.put('api/spells/' + id, spell) // console.log('', res.data)
+43. 
