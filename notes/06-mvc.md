@@ -264,7 +264,7 @@ if(appState.classifiedWords.includes(word.toLowerCase())){
 * reference the network tab in the inspect to see the URL and see if we missed something. 
 * inputs get an onchange. onclicks register on the click, but inputs can wig out when they get clicked. we want to tie into the change state of it, not the click.
 
-1. in axios, click on api, F2, change 'API' to sandboxApi.
+<!-- 1. in axios, click on api, F2, change 'API' to sandboxApi. -->
 2. copied down the sandboxApi and changed to dndApi. Also added the interceptors.request for the dndApi.
 3. build first controller - spellsController. Starting with the most familiar. export class SpellsController
 4. constructor then console.log
