@@ -308,4 +308,66 @@ if(appState.classifiedWords.includes(word.toLowerCase())){
 40. userspellscontroller - async toggleprepared(id) - try catch pop - await usersspellsservice.togglespell(id)
 41. userspellsservice - const spell = appstate.userspells.find(s => s.id == id)
 42. userspellsservice - toggle spell spell.prepared = !spell.prepared  // cosnt res = await sandboxApi.put('api/spells/' + id, spell) // console.log('', res.data)
-43.
+ 
+
+
+<!-- SECTION THURSDAY, MAY 18 -->
+* apod - a picture of the day
+* x-rate-limit is the amount of requests we can pull from the api in a day.
+* x-rate-limit-remaining is how many more we can take.
+* without the api key, we have no access to the api. gives an error 403.
+
+1. went to the env.js to add the domain and such.
+2. added new controller. nasacontroller. export class X( constructor() {}) console.log to test.
+3. added the controller to the router. made the home contoller an array. [hommeController, xController]
+4. in the axios service, put in the get request for the new api site. added params{api_key: ''} This allows us to view the api from the site.
+5. nasacontroller async getpictureofday() try catch pop to check for errors. await nasaService.getpictureofday()
+6. created nasaservice. class nasaservice{} export const nasaservice = new ns.
+7. nasaservice async getpictureofday const res = await nasaapi.get(). console.log
+8. created new model. nasapicture. export class nasapicture {constructor(data)}. this.x = data. x
+9. console.log again in the nasaservice. ('x', new Nasapicture(res.data))
+<!-- this way it auto imports into the model for a new one and pulls the data from it instead of mapping. gets the information, compares it to the model, then brings it back to us.
+you can put debuggers in the model to make sure it's working if you want to. -->
+10. in the appstate, nasapicture = null. copy down the import and adjust it. 
+11. nasaservice - getpicutre funciton- appstat.enasapicture = new nasapicture(res.data)
+12. in the nasacontroller - funcitondrawpicture(){ document.body.style.backgroundImage = `url(${this.picture})`} also added const picture = appstate.nasapicutre above it.
+<!-- this manipulates the style of the body without needing to go into CSS.  -->
+13. invoked  _drawpicture() down in the consturctor with appstate.on('nasaPicture',_drawPicutre) above it. 
+14. in the css, changed body to what it says for the body in today's lesson.
+15. go to the index.html to build out the layout of the page.
+16. give the row you want this template in an id to use.
+17. copy the template over to the nasa model. get nasapicutretemplate() return /*html*/. paste the template into the model. 
+18. in the nasacontroller, under _drawpicture, setHTML('pictureinformation", picutre.nasatemplate)
+19. add in input: date into the html - add in an onchange with selectDate()
+20. in the nasacontroller, async selecDate() { try catch pop await nasaservice.picture}
+20. test it
+21. in nasaservice async selectDatre() { const res = await nasaapi.get('?date=')}
+22. in nasacontroller selectdate let dateElem = docu.getelembyi('id) // let datevalue = dateelem.value
+23. add date to sleectdate in the nasa service and string interpolate below it.\
+24. in nasaservice async seletdate, add appstate.nasapicture = new nasapicture.
+25. added sandboxcontroller - export class sandboxcontroller - constructor - console.log
+26. added sandboxservice - calss sandboxservice - export const sboxxservice = new sandboxservice
+27. added [..., sandboxcontroller ] to the router 
+28. sandboxcontroller - async favoritePicture try catch pop await sandboxservice.favpicture()
+29. sandboxservice - async favotirepicture(favoritedata){ cosnt res = await api.post(favorite data)} - console.log
+30. sandboxcontroller - let  in favorite picture favoritedata = appstate.nasapicture
+31. ad the favorite to html for adding to your favorites. onclick=app.sandboxcontroller.favoritepicture()
+<!-- 32. sandbox controller maybe. async quick await sandbox service.quick -->
+<!-- 33. sandboxservice async quick asdfljklasdfhlkajsf -->
+34. appstate sandboxpicture = null
+35. new model sandboxpicture - export class sandboxpicture - constructor (){ input the data that comes from the sandbox api. }
+36. sandboxservice appstate.favoritepicture.push(new sandboxpictures(res.data)) - appstate.emit("sandboxPicutres")
+37. sandboxpictures = [] instead of null
+38. in sandboxcontrollers - async getfavoritepictures (){ try catch pop await sandboxservice.getfaovritepictures()}
+39. sandboxservice - get favoitepictures() - const res = await api.get('api/apods') - console.log ('', res.data.map(p => newsandboxpicture(p)))
+40. sandboxcontroller - export class sandboxcontroller a-appstate.on('account', this.getfavoritepictures()) - this.favoritepictures
+41. sandboxservice - appstate.sandboxpicures = res.dat.map (p => new sandboxpictures(p))
+42. add everything for the offcanvas
+43. sandboxcontroller - function drawfavorites() - let template = "" - appstate.sandboxpictures.foreach(p => template += p.favoritetemplate) - setHTML('favoritepicuttes', template)
+44. sandboxcontroller - sbc appstate.on('', getfavoritepictures)
+45. sandboxpicture - get favoritetemplate() { return ``}
+46. in favorite template, add onclick"app.sandboxcontroller.removefavorite()
+47. async removefavorite () { try catch pop.error awaitsandboxservice removefavorite()}
+48. sandboxservice - async removefavorite(favoriteid) const res = await api.delete(`api/apods/${favoriteId}', )
+49. sandboxservice - removefavorite - appstate.sandboxpictures = appstate.sandboxpictures.filter(p => p.id != favoriteId)
+<!-- put requests to flip the boolean -->

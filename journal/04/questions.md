@@ -41,4 +41,4 @@
 
 11. What is a 400 error?
 
-  > | ANSWER HERE |
+  > | Means a bad request being sent to the URL. Something needs to be changed at that point or is missing. Or the path is missing and the name put in the model doesn't match and needs to be fixed.  |
