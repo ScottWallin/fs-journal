@@ -2,7 +2,7 @@
 This reflection is open-format, so it can be whatever you like. Take this opportunity to write a bit on some of the things you have learned this week or some of the things that you are still struggling with; identify some challenges you had at the beginning of the week that you were able to overcome, or just generally reflect on how you are feeling at this point in the course.
 
 ## Prompts
-- What went well this week?
-- What did you learn that was a shock or surprise?
-- What are you struggling with?
-- What would you count as a victory?
+- What went well this week? the Mvc format is actually starting to make a bit more sense and the way to retrieve api's is clicking a bit. I"m still uncomfortable and nervous about it all,  but it's feeling manageable.
+- What did you learn that was a shock or surprise? How difficult this last checkpoint was. I knew it would be more difficult, but still i was shocked at how much more difficult it was. The amount of people in my class who failed it this week was shocking. as far as content from the courses, How api's work. I never really thought about the information being in libraries like that. i always wondered where the information came from, but didn't think about it like that for whatever reason. 
+- What are you struggling with? burnout really. After last week and last checkpoint, i didn't get much rest this last weekend. So i'm just exhausted. I'm hoping either this checkpoint will be more manageable or next weekend being a good weekend to relax since there's no checkpoint. 
+- What would you count as a victory? I passed the checkpoint. I was incredibly nervous. Sad i didn't duck it, but i was close to completing it. It was only a couple small things i missed so i've been working on those this week. 
