@@ -268,9 +268,9 @@ if(appState.classifiedWords.includes(word.toLowerCase())){
 2. copied down the sandboxApi and changed to dndApi. Also added the interceptors.request for the dndApi.
 3. build first controller - spellsController. Starting with the most familiar. export class SpellsController
 4. constructor then console.log
-5. got rid of the extra things in the router. replaced the only path with the SpellsController since that's the main thing we need anyway.
-6. class SpellsService { export const spells  new spells }
-7. async getSpells() const res = await dndApi.get('/api/x') > console.log (res.data.results) .results is where the data is actually located. go deeper.
+<!-- 5. got rid of the extra things in the router. replaced the only path with the SpellsController since that's the main thing we need anyway. -->
+<!-- 6. class SpellsService { export const spells  new spells } -->
+<!-- 7. async getSpells() const res = await dndApi.get('/api/x') > console.log (res.data.results) .results is where the data is actually located. go deeper. -->
 8. async getSpellsFromDndApi(){ try, catch, pop. error. await SpellsService.getSpells()} 
 9. in appState.js - spellDex = []
 10. spellsservice appstate.spellDex = res.data.results
