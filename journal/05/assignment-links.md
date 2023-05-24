@@ -2,5 +2,5 @@
 
 * **[Sammies](https://github.com/ScottWallin/sammies)**
 * **[Gregslist 3.0](https://github.com/ScottWallin/lateSpring23_gregslistNode)**
-* **[Repo](https://github.com/ScottWallin/<ASSIGNMENT_REPO>)**
+* **[Planets](https://github.com/ScottWallin/planets)**
 * **[Repo](https://github.com/ScottWallin/<ASSIGNMENT_REPO>)**

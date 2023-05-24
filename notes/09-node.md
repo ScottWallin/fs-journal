@@ -77,3 +77,51 @@ API Audience: http://sandbox.com
 30. added delted to the top of the controller. 
 31. deleteX(rrn), try catch next return, const xId = req.params.xId, return res.send ('x wa deleted)
 32. in the service, deleteX(xId), async delteX(xId), const x = await this.getXByID(xID), await x.remove() OR const x = await dbContext.Ds.findByIdAndDelete(xID)
+
+<!-- STUB JORDAN'S KICKASS FIRESIDE -->
+1. in the model: export const XSchema = new Schema() & import {X} from "mongoose';
+2. make sure you're exporting class, not const, in the controller.
+3. constructor: super then this.router then .use(Auth0Provider.getAuthorizedUserInfo) to pull the authorized information.
+4. 
+
+
+<!-- SECTION Wednesday, May 24th -->
+* two types of relationships: 1:1, 1:Many, Many:Many
+* 1:1 = unique pairing. they exist independently to each other and 
+* 1:Many = one collection that goes to many things
+* Many:Many = Many things with many things inside them. 
+* lucid uml diagram
+* with a 404, check the router. 
+
+1. opened express mvc > init publish
+2. added the things to the .env file and the env.js
+3. build the school schema in the models. import mongoose. const schema
+4. added the things into the schema that we got from the lucid diagram.
+5. in the dbcontext, added the school model 
+6. added the schools controller & service
+7. in the service, class schoolsService / export const schoolsservice
+8. in the controller, export class schoolscontroller
+9. constructor / super. in super('api/schools') this.router
+10. added .post('', this.createschool) then create school rrn try catch return / const schooldata / const newschool = await
+11. in the service, async create, const newschool = await / return
+12. created postman. baseurl setup as the localhost. folder for schools. post. {{baseURL}}/api/xxxx
+13. copied over schema to postman. filled out details of the model for the one. send. made a new one.
+14. back in the controller, in the constructor added .get('',getschools)
+15. getschools(rrn), try catch next, const query = req.query. const schoools = await schoolsservice. res.send(schools)
+16. in the service, getschools(query), const school = await.--.find, return schools
+17. back to postman. added a get, {{baseURL}}/api/schools
+18. back to cotroller, .get('/:id', this.getbyID), created getbyid.
+19. getbyid(rrn), try catch next, const schoolid = req.params.schoolid, const school = await schoolsservice.getschoolbyid(schoolid), res.send(school), add the bad request from today's lecture.
+20. in the service, getbyid(schoolid), const school = await dbcontext.schools.findbyid(schoolid) OR const school = await dbcontext.schools.find({_id:schoolid})
+21. back to postman, new get folder, paste id into the url line
+22. still in postman, new folder of courses. create {{baseURL}}
+23. new course model. export const courseschema & import mongoose & then add in the data for the course schema. to reference other models, add the {ref: 'model name'}
+24. in the model, courseSchema.virtual('school', { localField, 'schoolId', ref: 'school', foreignfield: '_id', justOne: true })
+<!-- local field is what's local to where this is -->
+25. course cshema to the dbcontext
+26. in the coursescontroller, import basecontroller, export class, constructor, super('api/courses'), this.router. .post('', this.createCourse).
+27. createcourse(rrn), try catch next, const courseData = req.body, const enwcourse = await coursesservice.createcourse(), return res.send
+28. in the service, createcourse, const newcourse = await dbcontext.course.create(coursedata), return newcourse
+29. in the postman, copy over the model then add the info.
+30. missed a bit. but if you add .get('/:schooolId/courses') helps with the roadmap for the API to layout the endpoints for the api to reference.
+31. two virtuals needed when you have multiple id's. in this expample, did coursestudentschema.virtual('course', {localField: 'courseId', ref: 'course', foreignfield:,_id', justone: true}) & coursestudentschema.virtual('student', {localfield: 'accountId', ref:'account', foreignfield: '_id', justone: true}) then register in the database context. dbcontex
