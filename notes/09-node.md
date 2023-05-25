@@ -93,15 +93,15 @@ API Audience: http://sandbox.com
 * lucid uml diagram
 * with a 404, check the router. 
 
-1. opened express mvc > init publish
-2. added the things to the .env file and the env.js
-3. build the school schema in the models. import mongoose. const schema
-4. added the things into the schema that we got from the lucid diagram.
-5. in the dbcontext, added the school model 
+<!-- 1. opened express mvc > init publish -->
+<!-- 2. added the things to the .env file and the env.js -->
+<!-- 3. build the school schema in the models. import mongoose. const schema -->
+<!-- 4. added the things into the schema that we got from the lucid diagram. -->
+<!-- 5. in the dbcontext, added the school model  -->
 6. added the schools controller & service
-7. in the service, class schoolsService / export const schoolsservice
+<!-- 7. in the service, class schoolsService / export const schoolsservice -->
 8. in the controller, export class schoolscontroller
-9. constructor / super. in super('api/schools') this.router
+<!-- 9. constructor / super. in super('api/schools') this.router -->
 10. added .post('', this.createschool) then create school rrn try catch return / const schooldata / const newschool = await
 11. in the service, async create, const newschool = await / return
 12. created postman. baseurl setup as the localhost. folder for schools. post. {{baseURL}}/api/xxxx
