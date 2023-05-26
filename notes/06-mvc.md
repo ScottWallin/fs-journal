@@ -371,3 +371,79 @@ you can put debuggers in the model to make sure it's working if you want to. -->
 48. sandboxservice - async removefavorite(favoriteid) const res = await api.delete(`api/apods/${favoriteId}', )
 49. sandboxservice - removefavorite - appstate.sandboxpictures = appstate.sandboxpictures.filter(p => p.id != favoriteId)
 <!-- put requests to flip the boolean -->
+
+
+
+<!-- SECTION Thursday, May 25 -->
+<!-- STUB HACKATHON PREP -->
+* localField: on the schema. ForeignField: what's on mongoose. the "toJson" is needed to be able to use the virtual
+
+1. on github, new repository, name it. 
+2. init commit. add collaborators > settings > collaborators and teams > add people 
+3. create bird model. export const BirdSchema = new Schema. import mongoose & schema
+4. name type: string required, imaage type string required, canFly type boolean, size enum type string, timestamps true toJson virtuals true since they're many:many, birdWatcherId type schema.type.ObejctId required, reference account ( that way we know who made it.)
+5. for the virtual: BirdSchema.virtual('birdWatcher'){ localfield: 'birtdwatcherid', foreignfield: '_id', justOne: true (booelan doesn't go in string),}
+6. register schema in dbContext
+7. build the controller. export class birdscontroller extends basecontroller{constructor super('/api/birds/'), this.router}
+8. build the service. class birdservice. export const birdsservice = new birdsservice.
+9. back in the controller, .get('', this.getBirds), then make the get birds. async getbirds(rrn) try catch next, const birds = await birdsservice.getbirds(query). const query = req.query. return res.send(birds). 
+10. in the birdsservice, async getbirds(query), const birds = await dbcontext.birds.find(query), return birds
+11. new collection in postman. new get request get birds. add the baseurl variable to the main folder. in the get, baseurl/api/birds. save.
+12. back in the controller. .post('', this.createBird). async createbird(rrn) try catch next return res.send(newbird). const birddata = req.body. const newbirds = await birdssservice.createbird(birddata)
+13. in the service, async createbird(birddata), const newbird = await dbcontxt.birds.create(birddata) return newBird. spin. 
+14. in postman, new post request. basurl/api/birds. raw. json. make the object {}. copy over information from the model. 
+15. spin up the client. grab the bearer token from localhost: 8080. inspect. network. fetch. click on the token. copy access token. on postman, under the main folder. auth. paste it in both values. authorization. bearer token paste.
+16. in teh controller. .use(Auth0Provider.getAuthorizeduserInfo). req.body.birdwatcherid = req.userinfo.id. 
+17. in the service. in the createbird, await newbird.populate('birdwatcher', 'name picture'). save. spin.
+18. in postman. create bird. send. build the birds in postman
+19. back in controler. .get('/:birdId', this.getbirdbyid), getbirdbyid(rrn), try catch next return const bird = req.params.birdId, const bird = await birdsService.getbirdbyid(birdid), return res.send(bird)
+20. in the service, async getbirdbyid(birdid), const bird = await dbcontext.birds.findbyid(birdid), if(!bird) {throw new badrequest('no flyinzone'), .populate('birdwatecher', 'name picture'), return bird. save. spin. 
+21. new request in postman. get birdbyid. copy over an id from the array we made. paste id. make sure it populates and works. 
+<!-- STUB FRONT END -->
+22. copy the url down, git clone, paste, open, huzzah. 
+23. add .env to the server level. paste in the information from the previous version. opeen the terminal. type nmp i to get the .envy, mongoose, all the other folders that are needed to spin the server and make everything work as it should. 
+24. bcw serve. open. inspect. make sure there are three network requests. 
+25. start building the homepage. sketch the bird card out. 
+26. create the birdscontroller & services and setup imports. 
+27. in the service, class bridsservice, export const birdsservice = new birdsservice()
+28. in the controller, export class bridscontroller, constructor, console.log, register the controller in the router 
+29. check the page to make sure everything works. 
+30. in the controller, async getbirds(), try catch pop birdsservice.getbirds(), put this.getbirds in the constructor. 
+31. in teh service, add getbirds(), const res = await api.get('api/birds'), console.log('[getting birds]', res.data)
+32. make bird model. xport class bird{}, constructor(data), go to the network, copy object, this.id, this.name, this.img, this.canfly, this.size, this.birdwatcherid, this.createdat, this.watchername, this.birdwatcher, 
+33. into the appstate, new collection. birds = [], import change to birds.
+34. back in service, appstate.birds = res.data.map(b => newBird(b)), console.log(appstate.birds);
+35. copy the bird card template from the index, comment out, paste in the model. get cardtemplate{``}, 
+36. to the controller, function _drawbirds(), let birds = appstate.birds, let template = '', birds.foreach(b => template =+  b.cardtemplate), setHTML('')
+37. back to the index. messed with divs and container fluid on the hteml. around line 73. cut
+38. home views, export const homeview = /*html*/ added the cut portion to the page to show what the main page will look like. 
+39. in the controller, place appstate.on('birds", _drawbirds) in the controller. 
+40. adding an onclick to the modal in the model. set activ, pass in the id,
+41. in the controlle,r async setactive(bridid)j, try catch error, birdsservice.setactive(birdid,), console.log
+42. in the service, set active(birdid), const bird = appstate.birds.find(b=b.id==birdid), console.log('[settingactive];bird)
+43. in the appstate, activebird = null, import and fix to above on line 19. 
+44. in the service, add appstate.bird = activebird (i think)
+45. found a modal. pasted it in the homeview. gave it an id to reference it. added data-bs-toggle="modal" & data-bs-target ='#modal' to the card template
+46. in the homeview, changed the title and added a container to the body. sections row, div, img, h1, mess around with that. 
+47. in the controller, do function _drawactive(), let bird = appstate.activebird, setHTML('modal-guts', bird.birddetails)
+48. after making the static bird form, added getbirdofmr in the controller. sethtml(')
+49. create brid in the service.
+50. in the ascync service createbird appstate.birds.unshif(new bird(res.data)) unshift doesn't emit.
+<!-- STUB BACK TO BACK END FOR VIEW COUNTS-->
+51. create new model: spotter.js for spotting the bird. 
+52. export const spotter schema such and such, bidid: {type, chema.types.objectid, required: ture, ref: 'bird'}, watcherid {type: schema.types.objectid, required true, ref 'account'}, timestampes true, tojson:{virtuals true}
+53. spotterschema.virtual('spotter'), localfield: 'watcherid' foreignfield:'_id', justonce: ture, ref:'account', THIS IS A VIRUTAL FOR THE WATCHER
+54. build spotter controller & service. in controller, export class spotterscontroller extends basecontroller, constructor, super('api/spotter'), this.router, 
+55. in spotter service, class spotterservice, export const spottersservice = new spottersservice. 
+56. back in the controller, .post('', this.becomespotter), .use(auth0provider.getauthorizeduserinfo)
+57. async  becomespottter(rrn), try return catch next, req.body.watcherid = req.userinfo.id, const spotter = await spotterservice.becomespotter(req.body), return res.send(spotter)
+58. in the service, async becomespotter(body), const spotter = await dbcontext.spotters.create(body), await spotter.populate('watcher', 'name picture') return spotter,  (DON'T FORGET TO ADD TO THE DBCONTED)
+59. back to postman. add post request. baseurl/api/spotters, body, raw, json, just have birdid & watcher id. populate them 
+60. in the controller, .get('/:birdid/spotters', this.getspottersbybirdid), then the function down below. async getspottersbybirdid(rrn), try catch next return, const spotter = await spottersservice.getspotterbybirdid(birdid), const brid = req.params.birdid, return res.send(spotter)
+61. in the spottersservice, async getspotersbybirdid(birdid), const spotters = await dbcontext.spotters.find({birdid}), .populate('watcher', 'name picture') return spotters
+62. in postman, add get request getspotters by bird id, add the baseurl,
+63. in the bird model, birdschema.virtual('watchercount', localfield: '_id', foreignfield: 'birdid', ref: 'spotter', count: true) 
+64. in the service layer, in the getbirds, .populate('watchercount') and also populate it in getbirdbyid, and also in createbird, add .sort('watchercount') to getbirds, 
+65. in the spotter model, spotterschema.index({watcherid: 1, birdid:1,}, {unique: true})
+<!-- STUB BACK TO FRONT SIDE -->
+66. added stuff in the spotters controller & service
