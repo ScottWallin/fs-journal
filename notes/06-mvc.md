@@ -396,7 +396,7 @@ you can put debuggers in the model to make sure it's working if you want to. -->
 16. in teh controller. .use(Auth0Provider.getAuthorizeduserInfo). req.body.birdwatcherid = req.userinfo.id. 
 17. in the service. in the createbird, await newbird.populate('birdwatcher', 'name picture'). save. spin.
 18. in postman. create bird. send. build the birds in postman
-19. back in controler. .get('/:birdId', this.getbirdbyid), getbirdbyid(rrn), try catch next return const bird = req.params.birdId, const bird = await birdsService.getbirdbyid(birdid), return res.send(bird)
+<!-- 19. back in controler. .get('/:birdId', this.getbirdbyid), getbirdbyid(rrn), try catch next return const bird = req.params.birdId, const bird = await birdsService.getbirdbyid(birdid), return res.send(bird) -->
 20. in the service, async getbirdbyid(birdid), const bird = await dbcontext.birds.findbyid(birdid), if(!bird) {throw new badrequest('no flyinzone'), .populate('birdwatecher', 'name picture'), return bird. save. spin. 
 21. new request in postman. get birdbyid. copy over an id from the array we made. paste id. make sure it populates and works. 
 <!-- STUB FRONT END -->
