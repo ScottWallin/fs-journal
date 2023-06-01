@@ -64,3 +64,27 @@
 18. in the appstate, adding the current page to change functionality between the main page and the search page. appstate.currentpage = res.data.page
 19. added total and current pages tothe homepage.
 20. homepage, added change page 
+
+<!-- SECTION Thursday, June 1st -->
+* beforeEnter: authGuard: before you can get to the account, you need to be logged in. if they're authenticated, let them in. if not, kick them out. 
+* scoped in the style tag - this css will only affect this page. 
+* try to keep the pages and components 100-150 lines of code. 
+* watchEffect() works similarl to a computed, but instead watches for changes then reruns the page. 
+* : binding only works on a specific element, v-model is used for forms. 
+* if you put in a router-link that doesn't match anything in the router, it breaks everything and crashes. make sure your links are routed.
+
+1. get the stuff - bearer token from sandbox.codeworks. Paste into the env. 
+2. open the account page since that's where things will be edited. inspect, network, fetch, preview for all the items that come with the account. 
+3. added this.bio, coverimg, social platform & resume to the acount component.
+4. in the account page, coverimg computed(() => 'url${appstate stuff}'), backgroundimg v-bind binds the cover image and will show the image better.
+5. in the account page, build out the template to design the layout of the account page.  added account-picture in the scss to shape the sizing of the account image. use the v-if for conditionals to show or hide things based on if they have criteria to be hidden or not. 
+6. new component accountform - form @submit for the new form. in the return, account: computed(() => appstate.account) to import it from the appstate. then back on the account page, you can brin gin the <accountpage />
+7. in the account form, make the editable under the setup then return the edtiable. ref(appstate.account) gives the startpoint for the account edit. place the editable in the form ip above. v-model to bind. 
+8. watcheffect - edtiable.value = ...appstate.account & handle submit for the form toto work properly and not update as you type on the page. 
+9. in the account form after building the template in that component, give the button some functionality. 
+10. in th account service, add the async edit account from the accountForm. appstate.account = new account
+11. in the homepage, get rid of the stuff in the template first. then build a projects model in the components and build a projects service.
+12. build out the getprojects in the service. build out the template in the homepage to bring the projects forward. then the template inthe project card to build the layout of each card. then build out the image sizing in the projectcard style.
+13. build out the modal in the app.vue and add @click in the projectcard to make it an active project. then setactiveproject in the projectcard. import the active project into the appstate. 
+14. build the profile page. in the profile page, build out the setup, const route, async getprifle, try catch pop, 
+15. build the profile service to retrieve the active profile. import the logger. build the profile card then go from there.
