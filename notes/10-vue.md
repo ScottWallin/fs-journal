@@ -88,3 +88,6 @@
 13. build out the modal in the app.vue and add @click in the projectcard to make it an active project. then setactiveproject in the projectcard. import the active project into the appstate. 
 14. build the profile page. in the profile page, build out the setup, const route, async getprifle, try catch pop, 
 15. build the profile service to retrieve the active profile. import the logger. build the profile card then go from there.
+
+<!-- STUB Fireside with the pokedex. USEFUL STUFF HERE -->
+1. pagination: do an @click on the buttons. home page line 3 in the example. the @click funciton is written down below the return. await the service, changepage(), async in the pokemon service.
