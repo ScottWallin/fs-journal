@@ -170,4 +170,16 @@
 39. within the albumsservice, under createalbum, add return res.data to make sure we have acess to the new page of the album we've just created. 
 40. FOR ADDING PICTURES under the previous modal, add another modal calling it createPicture. then add the data-bs-toggle to the button in the ALBUMDETAILSPAGE. 
 41. create a new comopnent for creatingpictureform. vt. export setup return under script. grab the modal from the modal component, spice it up as needed with the information that's needed. grab the input from the albumform, add the @submit.prevent, add const editable, async creatpicutre, try catch pop, logger, return editable, in the APPVUE add the createpictureform in the modal, back in the PICTUREFORM, await picturesservice, const formdata = editable, under setup, conf route, then under createpicture, formdata .albumid = route.parmas.id, appstate.pcitures.push, 
-42. int he picutresservice, async creatpicture, const res = await api.post, loggger,  
+42. int he picutresservice, async creatpicture, const res = await api.post, loggger,   
+<!-- STUB back side stuff with mick. -->
+43. create the collaborator SCHEMA on the server side within the model. export const schema, const objectid, then build everything out under the schema. don't forget the timestamp & the json, 
+44. add collaborator to the dbcontext
+45. create a collaborator controller & service. within the SERVICE, export const & class. within the CONTROLLER, export class, constructor, super, this.router, .use auth0, .post thiscollaboration, async createcollaboration, rrn, try catch next, const collab, return res.send, req.body.accountId.
+46. within the collaborator service, createcollaboration, const collab await dbcontext, return collab, await collab.populate
+47. within the ALBUMCONTROLLER, add.getcollaborators under this.router, async findalbumcollaboorators, rrn, try catch next, const collabs await collabservice find albumcollabs(req.params.albumid), return res.send(collabs),
+48. within the COLLABSERVICE, findalbumcollabs, const collabs = await colla.find({albumId: albumId}).populate(profile),
+49. within the ACCOUNTCONROLLER, .get collaborators, async getaccountcollaborations, rrn, try catch next, const collabs await collabservice, return res.send, 
+50. within the COLLABSSERVICE, getaccountcollabs, const collabs = await, accountId, .populate('album'), return collabs
+51. async getcollabs, const ocllabs await dbcontext, return collabs, 
+52. in teh COLABCONTROLLER, async remove collab, rrn, try catch next, const message collabsservice. removecollab, colalbid userinfo.id, return res.send message, 
+53. WITHIN COLLABSERVICE, remvoe collab(collabidk useridk), if x2, await colab.remove(), return collab.id
