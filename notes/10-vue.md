@@ -183,3 +183,6 @@
 51. async getcollabs, const ocllabs await dbcontext, return collabs, 
 52. in teh COLABCONTROLLER, async remove collab, rrn, try catch next, const message collabsservice. removecollab, colalbid userinfo.id, return res.send message, 
 53. WITHIN COLLABSERVICE, remvoe collab(collabidk useridk), if x2, await colab.remove(), return collab.id
+54. for the count, add the albumschema.virtual member count within the album.js.
+55. within the albumsservice, add memberCount to all instances with creator in populate. 
+56. 
