@@ -91,3 +91,83 @@
 
 <!-- STUB Fireside with the pokedex. USEFUL STUFF HERE -->
 1. pagination: do an @click on the buttons. home page line 3 in the example. the @click funciton is written down below the return. await the service, changepage(), async in the pokemon service.
+
+
+<!-- SECTION Monday, June 5th & Tuesday, June 6th -->
+<!-- STUB back end with Mick-->
+1.  Opened up PostMan. 
+2. built project in express-vue. project name. click the button to enter the workspace.
+3. setup env & env.js & start the server. open local host.
+4. to make sure the front and back ends are connected, log in.
+5. built the model in the model. export const AlbumSchema = new schema(). build out the properties of the schema.
+6. build an album controller and an albumservice. register the model in the DbContext. build out the class & export service for the album service. 
+7. export class albumscontroller extends basecontroller in the albums controller. constructor - super. 
+8. in the controller, under router, add .post this.create. make sure you're logged in with .use, auth0provider.
+9. in the controller still, async create, rrn, try catch next, const album. return res.send. create req.body to make sure the user is the only one who can make an album under their name. 
+10. in the albumsservice, add create. const. await album. return album. 
+11. in the controller, added .get findallalbums. .get findalbum. asy;nc findallalbums. try catch next. const albums. return res.send. async findalbumbyid. req res next.
+12. in the service, add findalbumbyid, const albums. return albums. fidnallalbums const albums. return albums.
+13. in the controller, .delete. build async archivealbum, rrn, try catch next, const album, return res.send.
+14. in the service, async archiveAlbum, const album, album.archived,  await album.save, if(album.creatorId != userId) throw forbidden.
+<!-- STUB still back end, but now for picture things -->
+15. create the picture.js model schema. import. export. add details for the schema. don't forget timestamps and toJson. 
+16. add pictures to the dbcontext. 
+17. create new picturescontroller & pictureservice. in the service, add class & export.
+18. in the controller, export extends, import, constructor, super, this.router, async create rrn, try catch next, const picture await, return res.send,
+19. in the service, .post &  class pictureservice, const await, pictureData, return picture, 
+20. in the service, under createpicture, don't forget to populate the info. 
+21. in the ALBUMS controller, add .get(albumId), aasync findAlbumPictures, rrn, try catch next, const await, 
+22. in the PICTURES service, add findalbumpictures, const await pictures. find
+<!-- anytime you're searching for items, you need to populate -->
+<!-- STUB Day 2 with Sam on the front side -->
+* first thing you always want to do is build out the .env & the env.js as needed. 
+* Account = logged in user and their object is returned from the server. 
+* Under the account model, the stuff in extends is hidden except for the user. Everything under profile is what's shown on their main profile. 
+
+1. start off running npm i if you're pulling from a partner. doing the bcw create installs that.
+2. double check the server is running if you're cloning the project from your partner or starting it after closing it. 
+3. build out the model for the first item. in lecture, starting with the album.
+4. lin the account model, add an extends for the profile. 
+5. build out the rest of the models that are needed.
+6. Build out the services as they're needed. Starting wtih the album service here.
+7. in the Homepage, async function getAlbums*(), try catch pop, logger, await albumsService.getalbums(), onMounted getAlbums under catch
+8. in the albumsservice, async getalbums(), const res = await api.get(api/albums), logger, 
+9. in the appstate, new albums collection, leave it as an empty array.
+10. back to the albumservice, appstate.albums, res.data.map(new album stuff), 
+11. on the homepage, under return, albums: computed (appstate things), then {{albums}} on the template to make sure the data draws. 
+12. on the homepage, rough skeleton to build out the layout of the page. div, con fluid, row*3, label the rows as they are. in the all albums, img, div p with the title, p with the number of likes, i for the like icon, img-fluid, style a bit as needed.
+13. grab the template from the album card, cut it out, make a new album card component, vt, then paste it into the template. 
+14. back to the homepage, <albumCard />, then build the v-for in the COLUMN NOT THE ROW or it'll make a new row each time. v-for a in albums, :key=a.id, 
+15. back int he albumcard, props under the export before setup, album:{ type: Album required true}
+<!-- NOTE because the type is being passed through the client side, it's not an object. We've labeled the object as a name for our side, so that's where the type: Album comes in -->
+16. back to the homepage bind album with :album="a"
+<!-- NOTE with binding, after the bound albumcard, the word following the : bind is what references that word within that component. -->
+17. back in the albumcard, change the cover image to the image tag then source album.coverimg. and album.title
+<!-- NOTE :alt in the image, is what shows when the image cant' be found. -->
+18. if you have a background image, change it in the app.vue to persist across each page. make a class to title the background, then bring in the image. add in the styling to make it look good and work properly. 
+<!-- STUB details within the album page -->
+19. start with building a new point in the router for the album. don't forget the :id to make sure it's a unique album that's entered.
+20. build out the album details page to give the router somewhere to go when the album is clikced on. wrap the router-link around the album card. 
+21. in the album details page, import logger and pop. async gealbumbyid, try catch logger pop, asyn getpicturebyalbumid, try catch logger, on mounted  for get album and get pictures.
+22. under setup in teh details page, const route = useRoute(), make sure use router is imported, under try, const albumid = route.params.albumid, await albumservice. 
+23. in the slbum service, asyn getalbumbyid, const res await, logger.log 
+24. make sure to add activealbum to the appstate. 
+25. back tothe albumservice, under getalbumbyid, const res await, logger.log, appstate.activealbum, 
+26. build a picturesservice so we can get the individual images. class picturesservice export, 
+27. back in the album details page, under getpicturesbyalbumid, await picturesservice.getpicturesbyalbumid, const albumId = route.params.id
+27/5. make sure to add pictures to the appstate.
+28. async getpictuersbyalbumid, const res = await api.get('api/alsdkjflsdjfla'), logger.log, appstate.pictures  = res.data.map(), logger.log
+29. build out the template in the albumdetailspage. container fluid, row, col4, col 8, row in the 8, col 6,p, btn, 
+30. still on teh detailspage, under return, add the computed for pictures, then back up top for more styling, 
+31. build out a modal.vue for funcitonality of the modals and the styling. bring a modal over from boostrap or create your own. get rid of the modal content since we want this to be reusable. add a slot. 
+32. in the navbar, add a button to create the album and utilize the modal. 
+33. new component to createalbum form. vt for the information. in the template, copy the commented modal content over, then test the opening.
+34. bring in the modal under the footer on the app.vue bring in the id to target it, then the createalbumform for the content of the modal, then close the modal.
+35. in the createalbumform, finish the form and creating it for each thing that's needed with it. then under the setup, const editable =ref({}), up in the form, write out the v-model. add editable int he return to make it readable by the template. async createalbum, try catch, logger, add the @submit.prevent createalbum, add type submit to the button. add a v-if to the button to make sure it doesn't show up unless there's a user, under the setup, add the user:computed, test.
+36. in the fomr still, add const formdata = editable.value, await albumsservice.creataalbum. add a select for the category since that's a requirement of the model and we need to specify what's needed within those options or the album won't post. 
+37. in the albumservice, async createalbum(form), cojnst res await, logger, 
+38. in the form, add the modal.getorcreateinstance & the editable value to reset the form. create the router object under setup. within the createalbum, add router.push({name:'X', params: {id: newAlbum.id } })
+39. within the albumsservice, under createalbum, add return res.data to make sure we have acess to the new page of the album we've just created. 
+40. FOR ADDING PICTURES under the previous modal, add another modal calling it createPicture. then add the data-bs-toggle to the button in the ALBUMDETAILSPAGE. 
+41. create a new comopnent for creatingpictureform. vt. export setup return under script. grab the modal from the modal component, spice it up as needed with the information that's needed. grab the input from the albumform, add the @submit.prevent, add const editable, async creatpicutre, try catch pop, logger, return editable, in the APPVUE add the createpictureform in the modal, back in the PICTUREFORM, await picturesservice, const formdata = editable, under setup, conf route, then under createpicture, formdata .albumid = route.parmas.id, appstate.pcitures.push, 
+42. int he picutresservice, async creatpicture, const res = await api.post, loggger,  
