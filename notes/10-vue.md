@@ -185,4 +185,15 @@
 53. WITHIN COLLABSERVICE, remvoe collab(collabidk useridk), if x2, await colab.remove(), return collab.id
 54. for the count, add the albumschema.virtual member count within the album.js.
 55. within the albumsservice, add memberCount to all instances with creator in populate. 
-56. 
+<!-- STUB back to front side with SAM -->
+56. setup the buttons for filtering. 
+57. on the hOMEPAGE under setup, const filterBy = ref(''), pout @click filterby on each of the buttons, add filterby under return, 
+58. build out the collabsservice, class, export const, async getmycollabs, const res - await api.get, logger
+59. in the AUTHSERVICE, await ocllabservice.getmycollabs(), 
+60. add mycollabs to the appstate then build the model for collabs, export constructork, this / data, 
+61. within COLLABBSERVICE, add to getmycollabs, apppstate.mycollabs, logger, 
+62. withn ALBUMCARD add the member.count & and in the ALBUMDETAILSPAGE, also in that page,  async function getcollabsbyalbumid, try catch pop, const albumid, await collabservcice, add that functiont onmounted, 
+63. in COLLABSSERVICE, async getcollabsbyalbumid, const rest await api.get(api/albums{albumid}h, collabs), logger, asppstate.collabs resdata.map(),  
+64. IN ALBUMDETAILSPAGE, add collabs computed, data dump with {{collabs}}, throw in v-for & key on line 36, add an @click to the heart button, async createcollab, trycatch logger, const albumid, 
+65. IN collabsservice, async createcollab, const res await api, 
+66. in DETAILSPAGE, add iscollaboratoer: computed blah blah blah, async remove collab,  try catch pop await
