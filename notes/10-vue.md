@@ -95,14 +95,14 @@
 
 <!-- SECTION Monday, June 5th & Tuesday, June 6th -->
 <!-- STUB back end with Mick-->
-1.  Opened up PostMan. 
-2. built project in express-vue. project name. click the button to enter the workspace.
-3. setup env & env.js & start the server. open local host.
-4. to make sure the front and back ends are connected, log in.
-5. built the model in the model. export const AlbumSchema = new schema(). build out the properties of the schema.
-6. build an album controller and an albumservice. register the model in the DbContext. build out the class & export service for the album service. 
-7. export class albumscontroller extends basecontroller in the albums controller. constructor - super. 
-8. in the controller, under router, add .post this.create. make sure you're logged in with .use, auth0provider.
+<!-- 1.  Opened up PostMan.  -->
+<!-- 2. built project in express-vue. project name. click the button to enter the workspace. -->
+<!-- 3. setup env & env.js & start the server. open local host. -->
+<!-- 4. to make sure the front and back ends are connected, log in. -->
+<!-- 5. built the model in the model. export const AlbumSchema = new schema(). build out the properties of the schema. -->
+<!-- 6. build an album controller and an albumservice. register the model in the DbContext. build out the class & export service for the album service.  -->
+<!-- 7. export class albumscontroller extends basecontroller in the albums controller. constructor - super.  -->
+<!-- 8. in the controller, under router, add .post this.create. make sure you're logged in with .use, auth0provider. -->
 9. in the controller still, async create, rrn, try catch next, const album. return res.send. create req.body to make sure the user is the only one who can make an album under their name. 
 10. in the albumsservice, add create. const. await album. return album. 
 11. in the controller, added .get findallalbums. .get findalbum. asy;nc findallalbums. try catch next. const albums. return res.send. async findalbumbyid. req res next.
