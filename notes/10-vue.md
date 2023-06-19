@@ -197,3 +197,8 @@
 64. IN ALBUMDETAILSPAGE, add collabs computed, data dump with {{collabs}}, throw in v-for & key on line 36, add an @click to the heart button, async createcollab, trycatch logger, const albumid, 
 65. IN collabsservice, async createcollab, const res await api, 
 66. in DETAILSPAGE, add iscollaboratoer: computed blah blah blah, async remove collab,  try catch pop await
+
+<!-- NOTE Sockets on 6.19.23 -->
+1. on client switch "use Sockets" to TRUE
+2. make sure the sockets aren't erroring out.
+3. 
