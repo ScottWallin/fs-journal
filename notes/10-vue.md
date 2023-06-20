@@ -201,4 +201,17 @@
 <!-- NOTE Sockets on 6.19.23 -->
 1. on client switch "use Sockets" to TRUE
 2. make sure the sockets aren't erroring out.
-3. 
+<!-- STUB lessson with Miles -->
+1.  start with the channel controller
+2. use socketProvider to start out. socketprovider.(in here goes wherever you're wantinmg to send the message). s: to show it's coming from the server. s:creatign:channel to tell the server we're creating a channel. channel then becomes the object we're sending. 
+3. WS in the dev tools = web socket.
+4. to socketsservice on client side. .on"s:xx:xx", then this.whatever function you want. build out the first function. this one being createChannel. don't forget to add the null (if(!xxxx) throw error) while you code. Appstate.channels.push will do the samething as the onMounted.
+5. to messagesController on teh server side. build out the socketProvider under create. S:creating:message to show the message we're creating. payload is message. dont' forget the "toString" for the id.
+6. to socketService on client side. .on creating message. then creatingMesage function. let message = enw Message. Appstate.message.push. 
+7. set up join in the client side. on the channel page, build a watch effect. also built router.beforeeach to from to show who the message is going to and rom. within the beforeeach, from.name. go create leaveRoom underneath. back up to beforeEach to finish it off.
+8. in the handler in the server, .on leaving room. then build out the leavingRoom function. null check. this.socket.leave. this.socket.to.(x).emit"(s:x:x 
+9. in the socketservice on the client side, build out leavig room.
+10. client side channel page, build joinroom.
+11. server side, handler, .on joining room, create joiningRoom. socket.join. socket.to
+12. client side, socket service, .on joining room, build joiningRoom function. 
+13. client side, channelpage, joinRoom under the watch effect along with everything from onMounted.
