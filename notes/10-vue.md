@@ -215,3 +215,9 @@
 11. server side, handler, .on joining room, create joiningRoom. socket.join. socket.to
 12. client side, socket service, .on joining room, build joiningRoom function. 
 13. client side, channelpage, joinRoom under the watch effect along with everything from onMounted.
+
+<!-- NOTE RESUME NOTES WITH CHELSEA -->
+1. Chronological & functional types
+2. 7-10 years on resumes. keywords adn industry terms. links to projects.
+3. DON'T DO. bad grammar, bad email, no actual achievements, long paragraphs( use bullets ), not tailored to job. no photos,
+4. 
