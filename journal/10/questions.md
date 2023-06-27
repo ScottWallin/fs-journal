@@ -1,15 +1,15 @@
 # CSharp and SQL Fundamentals
 01. What is the purpose of a `namespace`?
 
-  > | ANSWER HERE |
+  > | This declares a scope of related objects for the page. It helps with organizing elements and functions and creating globally unique types. They help with internally organizing within the page to keep functions and elements together, but also for external organization system to present elements to other portions of the code. |
 
 02. What is the difference between a `class` and an `interface`?
 
-  > | ANSWER HERE |
+  > | A class has a defintion and an implementation. Interfaces only have definitions. Interfaces contains behaviors that the class contains and defines, while the class describes how an object behaves. |
 
 03. What is the method that returns an instance of a class, yet it has no return type?
 
-  > | ANSWER HERE |
+  > | Void. Null can be used to show the absence of something that should be there, while void just says "there is nothing here" and leaves it at that. |
 
 05. In the Car example what is the access modifier of the `Start()` method?
 
@@ -25,15 +25,15 @@
   }
   ```
 
-  > | ANSWER HERE |
+  > | Public. This allows anyone to set and get within the function of Start. |
 
 06. In the Car example what is `string` an indication of?
 
-  > | ANSWER HERE |
+  > | String explains how Start returns it's functionality. In order for "Vrooom" to come back as a string, the function needs to have the 'string' type listed prior to it.  |
 
 07. In the Car example what is `abstract` preventing?
 
-  > | ANSWER HERE |
+  <!-- > | Instantiation. NOTE come back to this | -->
 
 08. In a SQL table, what is the difference between information in a row and information in a column?
 

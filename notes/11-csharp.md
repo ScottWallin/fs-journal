@@ -45,11 +45,11 @@ when using names with dotnet, don't use - cus it'll get super mad.
 * USING = C#'s import/export
 * _ in front of something to signify it's private readOnly
 
-1. dotnet-auth, name, cd . file name, dotnet restore to make sure dependencies are there.
-2. comment out in Startup.cs ConfigureAuth(services)
-3. reopen it to bring the run and debug info. don't do add configuration.
-4. create new model. IN C# TO IMPORT / EXPORT THE CLASSES NEED OT BE DEFINED IN NAMESPACES. Namespace catRoundUp.Models; (needs to be defined) public class Cat{
-  string mame, get/set, public int Age get/set, public string color get/set, public bool LongHair get/set, public bool Penned get/set. On the class name, cmd/ctrl . generate constructor.
+<!-- 1. dotnet-auth, name, cd . file name, dotnet restore to make sure dependencies are there. -->
+<!-- 2. comment out in Startup.cs ConfigureAuth(services) -->
+<!-- 3. reopen it to bring the run and debug info. don't do add configuration. -->
+<!-- 4. create new model. IN C# TO IMPORT / EXPORT THE CLASSES NEED OT BE DEFINED IN NAMESPACES. Namespace catRoundUp.Models; (needs to be defined) public class Cat{
+  string mame, get/set, public int Age get/set, public string color get/set, public bool LongHair get/set, public bool Penned get/set. On the class name, cmd/ctrl . generate constructor. -->
 5. go to controller and build a new one. namespace catRoundUp.Controllers; public class CatsController : ControllerBase, [ApiController], [Route("api/cats")], 
 6. define the METHOD. public ActionResult<string> Test() { return "hey";} [HttpGet] up above, try catch. 
 <!-- Return needs to be an action request. not just a "string message" but -->
