@@ -67,3 +67,33 @@ private readonly
 16. in the service, RemoveCat, follow the rest
 17. in the controller, httpPut catId, public actionresult cat, updateCat int catid, fromBody cat updateData, then follow under the try catch
 18. in the service, internal cat updatecat(cat updateData), cat original = _repo.getbyid(updatedat.id); if (original == null) throw new excpetion($"no cat at id:{updateData.id}"), original.Age = updateData.Age != null ? updateData.Age : original.Age; repeat for the rest
+<!-- SECTION June 27 lecture -->
+* table works like a schema
+* when doing insert, values to be inserted must be explained.
+* var char - variable character - allows max byte size for that column
+* @ uses variable by that name so dapper can get the value when it's used. wouldn't be able to otherwise. 
+
+1. start with dbSetup sql
+2. create penguin Table within the setup. 
+3. insert information in.
+4. in database extension, new connection, Name can be whatever. host is master connection endpooint (copy from site), username is sgroot (super general root), paste, name of database (must match what's on the scalegrid.io)
+5. in the connection string, bring the stuff over and reference mick's, 
+6. build out the model with the same information as the dbsetup. car model for today's example.
+7. next, build the carscontroller witht he route
+8. in the carsservice, build out the documentation to communicate with the repo. line 10
+9. go to startup, add services.addscoped carsrepository & service.
+10. cars repo, private readonly idb connection , generate constructor
+11. in teh controller, write the get function. public actionresult list car, getallcars, try catch, list car cars carsservice, ok cars
+12. in the carsservice, internal list car getallcars, list car/s, erpo get, return,
+13. within the repository, under getallcars, string sql = "select * from cars;"; (DONT SAVE), listcar cars = _db.query<car>(sql).tolist(); return cars; (THE THING IN THE CARROT IS SO THAT DAPPER KNOWS WHAT TO RETURN)
+14. in the controller, build out the get one car. starting line 28 for ref. httpget, {carId} to pull the number of the id, not have it be an endpoint for the api,
+15. in the car repo, getbyid, within the select, string interpolate to get the single car by id.
+16. under the controller create car
+17. then in service, create car, bring in the carData,
+18. in the repo, createcar too. @ in front of strings makes it multiline so it doesn't do one long string. INSERT INTO to add things to the table.  
+19. in the controller, htttpdelete, make the result a string to return the "deleted" message. 
+20. in the service, add the remove. make sure the car exists first.
+21. in the repo, buiold out the delete. delete & no *
+22. for the edit, int he controller, httpput, action result, update, try catch
+23. in the service, update car, get original, check auth, add the editables, 
+24. in the repo, build out the updated car. internal void things. 
