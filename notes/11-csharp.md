@@ -97,3 +97,33 @@ private readonly
 22. for the edit, int he controller, httpput, action result, update, try catch
 23. in the service, update car, get original, check auth, add the editables, 
 24. in the repo, build out the updated car. internal void things. 
+
+<!-- SECTION June 28 -->
+* for creatorID in this example, but make sure when you reference another table, they match exactly. id MUST = creatorId in this example because of what it references.
+* foreign key restraitng: ties two tables together. Foreign Key: (SETS IT UP) (this thing) references tablename(thing)
+* when deleting from the table, use the id but that id is the placement of the thing. when deleting from the account table, use the actual id string.
+* in the foreign Key you can add a hook. "on delete cascade" means when the thing is deleted it sends everything else associated with that account
+* foreign key IS NOT a virtual creation. to join two tables, SELECT title, name FROM albums JJOIN accounts. this joins both tables and receives information from both.
+* async is used in this one to communicate with Auth0 to make sure there's someone logged in. 
+* execute returns the amount of rows that were affected.
+
+1. starting with dotnet-vue so we can have our project spun up and retrieve tokens.
+2. add all the things in the appsettings.
+3. in the dbSetup, created the table. Create Table (name), then add the information.
+4. create the insert into with the information from the table.
+<!-- STUB create album -->
+5. start within the model. namespace then public class. 
+6. within the CONTROLLER, namespace, api, public class, rpvate readonly, public repo, httppost, try catch, we alos bring in the private readonly of Auth0 
+7. within the STARTUP add the addscoped services & repo
+8. within the SERVICE, namespace, public class, private readonly, public repo. When wirting the return under create, the query needs to return the things. the first two are the things it'll pull, but the third is what it'll rturn.
+<!-- STUB GET ALBUM -->
+9. in the CONTROLLER httpget, actionresult, list, trycatch
+10. in the SERVICE, internal list, list albums, getallalbums
+11. in the REPO, internal list getallalbums, list albums, 
+<!-- STUB get by id -->
+12. in the SERVICE internal album getbyid album album, if album
+13. in the REPO, internal getbyid, firstordefault since it's not an album
+<!-- STUB delete -->
+14. in the CONTROLLER, httpdelete, authorize, piblicaction result, try catch return, album album, albumsservice.archivealbum(albumid, userinfo.id)
+15. in the SERVICE, internal album archivealbum, album album getbyid, if(album.creatorid != userid), 
+16. in the REPO internal void updatealbum, UPDATE albums SET then set all properties to be set, execute sql, 
