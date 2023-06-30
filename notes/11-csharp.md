@@ -127,3 +127,36 @@ private readonly
 14. in the CONTROLLER, httpdelete, authorize, piblicaction result, try catch return, album album, albumsservice.archivealbum(albumid, userinfo.id)
 15. in the SERVICE, internal album archivealbum, album album getbyid, if(album.creatorid != userid), 
 16. in the REPO internal void updatealbum, UPDATE albums SET then set all properties to be set, execute sql, 
+
+<!-- SECTION Jun 29 -->
+* 
+<!-- STUB create pictures -->
+1. dbsetup to start making the table first. when referencing id's from other tables, respect the data type. keep it the same. 
+2. within the model, build out the pictures model to match the table. the VIRTUAL is made in the model, not the table. reference the picture model if needed for understanding.
+3. REPO layer is more or less the main dependent of the three. Starting with REPO layer. namespace, public class pic repo, private readonly, idbconn. cmd + . for the constructor. 
+4. SERVICE layer. namespace, public class, private readonly, SERVICE LAYER SHOULD ONLY BE TALKING TO ONE REPO.
+5. CONTROLLER layer. namespace, [api], [route], public class, private readonly, public pictures controller, [httppost], [authorize], public ActionResult<Picutre> createpicture(from body for the request body, Picture so we know what object, banana pictureData), pic newpic = picservice.createpic(picdata), wrap the result in a TASK, 
+6. SERVICE layer, internal Picture createpc, return repo. RETURN FROM REPO IS NEEDED FOR A SINGLE LINE
+7. REPO layer, internal pic creaepic, string sql =@"then insert into table. then insert the data we need. next for values. " adding x.* pulls everything from that table. pulling x.id = last inesert id pulls the most recently uploaded. WHAT COMES AFTER INTERNAL IS WHAT'S RETURNED, pic, pic,
+8. in the STARTUP, add the scoped for repo and service. 
+<!-- STUB get pictures -->
+9. to pull the pictures, go to the ALBUM CONTROLLER because we want to pull them through the albums. httpget albumid/pics, public actionresult list (list because we want lots of them), getpicsbyalbumid, GO TO THE TOP TO BRING IN THE PICTURESSERVICE DEPENDENCY 
+10. to the PICTURES SERVICE now to build out the get. internal list pic getpicsbyalbumid int albumid, list pics pics repo
+11. to the PICTURES REPO, string sql = @"", list<pic> pics db query pic, act, pic, sql pic act => pic.cre = act, return, new to list
+<!-- STUB delete pictures -->
+12. in the PIC CONTROLLER httpdelete, auth, public action result, delpic(int pic), try catch, things that i spaced typing in the example today.
+13. in the PIC SERVICE internal void del pic, WRITE OUT THE GET BY ID FIRST 
+14. in the PIC REPO, WRITE OUT THE GET BY ID, 
+15. back to the PIC SERVICE, internal void del pic, such and such. 
+
+<!-- SECTION collaborators -->
+<!-- STUB create collabs -->
+1. in the SETUP create table if not exists collabs, build out collab table. make it. execute. win.
+2. insert into to test it. select from join on join
+3. build out the collab model, public class collabacct : acct to extend the account
+4. create a COLLAB REPO, namespace, public class, priv readonly, 
+5. create a COLLAB SERVICE, namespace, public class, priv readonly,
+6. create a new COLLAB CONTROLLER, namespace, apicontroller, route, public calss, private readonly c service & riv readonly auth0, public collabscontroller, 
+7. still in CONTROLLER, public actionresult collab create collab from body 
+8. in the COLLAB SERVICE, internal create collab
+9. in the COLLAB REPO, internal collab createCollab, string sql =@"insert inot, values, ", int id, execute scalar, (SCALAR EXPECTS INFORMATION AND THAT'S WHAT IT'S USED FOR. PULLS MULTIPLE CELLS OF INFO)
