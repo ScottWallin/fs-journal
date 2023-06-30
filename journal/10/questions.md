@@ -33,16 +33,28 @@
 
 07. In the Car example what is `abstract` preventing?
 
-  <!-- > | Instantiation. NOTE come back to this | -->
+  > | Instantiation. Abstract classes can't be instantiated. This allows multiple classes or abstract methods to use it |
 
 08. In a SQL table, what is the difference between information in a row and information in a column?
 
-  > | ANSWER HERE |
+  > | Columns hold all the same information for the same field. like column "name" contains all the names within the table for multiple inputs. Rows contain all the information within one group. like all the ingredients or information about a single album. |
 
 09. Demonstrate the necessary SQL for creating a table called `characters` with the values `name, age, description` as strings, and an `int` id.
 
-  > | ANSWER HERE |
+  > | CREATE TABLE characters(
+     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+        name VARCHAR(255) NOT NULL,
+        age VARCHAR(750) NOT NULL,
+        description VARCHAR(255) NOT NULL,
+  ) |
 
 10. In SQL how can you query more than a single table? Provide an example.
 
-  > | ANSWER HERE |
+  > | by using 'select' and 'join'. 
+     string sql = @"
+    SELECT
+    alb.*,
+    creator.*
+    FROM albums alb
+    JOIN accounts creator ON alb.creatorId = creator.id;
+    "; |
