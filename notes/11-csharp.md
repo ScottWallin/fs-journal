@@ -160,3 +160,11 @@ private readonly
 7. still in CONTROLLER, public actionresult collab create collab from body 
 8. in the COLLAB SERVICE, internal create collab
 9. in the COLLAB REPO, internal collab createCollab, string sql =@"insert inot, values, ", int id, execute scalar, (SCALAR EXPECTS INFORMATION AND THAT'S WHAT IT'S USED FOR. PULLS MULTIPLE CELLS OF INFO)
+
+<!-- SECTION finishing allspice with sam -->
+* 
+<!-- STUB get collabs from album -->
+1. albums CONTROLLER, grouped with the other gets. httpget{albumid}/collaborators. public actionresult, try catch, build out a new dependency for the collaborators service. we need the service for that one, cus we can't go through the other services.
+2. in the collabsCONTROLLER, get them by albumid
+3. in the collabs REPO, query to get the information we want, then dapper to map it out.
+4. i can't focus this week to save my life. in the collab REPO, getmy collaboratoralbums. 
